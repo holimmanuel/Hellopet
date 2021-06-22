@@ -21,8 +21,49 @@ const {width} = Dimensions.get('screen');
 const cardWidth = width / 2 - 20;
 
 const HomeScreen = ({navigation}) => {
-  const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
-
+const ListCategories = () => {
+    return (
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={style.categoriesListContainer}>
+        {categories.map((category, index) => (
+          <TouchableOpacity
+            key={index}
+            activeOpacity={0.8}
+            onPress={() => setSelectedCategoryIndex(index)}>
+            <View
+              style={{
+                backgroundColor:
+                  selectedCategoryIndex == index
+                    ? COLORS.primary
+                    : COLORS.secondary,
+                ...style.categoryBtn,
+              }}>
+              <View style={style.categoryBtnImgCon}>
+                <Image
+                  source={category.image}
+                  style={{height: 35, width: 35, resizeMode: 'cover'}}
+                />
+              </View>
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: 'bold',
+                  marginLeft: 10,
+                  color:
+                    selectedCategoryIndex == index
+                      ? COLORS.white
+                      : COLORS.primary,
+                }}>
+                {category.name}
+              </Text>
+            </View>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+    );
+  };
   const Card = ({fiture}) => {
     return (
       <TouchableHighlight
@@ -66,6 +107,7 @@ const HomeScreen = ({navigation}) => {
             What do you want today
           </Text>
         </View>
+
         <Image
           source={require('../../assets/person.png')}
           style={{height: 50, width: 50, borderRadius: 25}}
@@ -85,16 +127,29 @@ const HomeScreen = ({navigation}) => {
           />
         </View>
       </View>
-      <FlatList
+        <FlatList
         style={{
           marginTop: 30,
         }}
         showsVerticalScrollIndicator={false}
         numColumns={2}
         data={fiture}
-        renderItem={({item}) => <Card fiture={item} />}
+        renderItem={({item}) => 
+        <Card fiture={item} />}
       />
+      <View style={{flex:6, marginHorizontal:20,}}>
+        <Text style={{fontSize: 25, fontWeight: 'bold',}}>
+          Artikel Baru
+        </Text>
+        <FlatList 
+        style={{flex:1, marginTop:20, height:80,  backgroundColor: COLORS.primary,}}
+        horizontal={true}>
+          <Image 
+          source={require('../../assets/pemandangan.jpg')}/>
+        </FlatList>
+      </View>
     </SafeAreaView>
+  
   );
 };
 

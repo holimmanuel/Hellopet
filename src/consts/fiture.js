@@ -23,6 +23,12 @@ const fiture = [
     ingredients: 'Mengecek Kesehatan Hewan',
     image: require('../assets/kesehatanhewan.png'),
   },
+  {
+    id: '4',
+    name: 'Kesehatan Hewan',
+    ingredients: 'Mengecek Kesehatan Hewan',
+    image: require('../assets/kesehatanhewan.png'),
+  },
 ];
 
 export default fiture;

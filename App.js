@@ -7,6 +7,8 @@ import DetailScreen from './src/views/screens/DetailScreen';
 import BottomNavigator from './src/views/navigation/BottomNavigator';
 import OnBoardScreen from './src/views/screens/OnBoardScreen';
 import ChatDokterScreen from './src/views/screens/ChatDokterScreen';
+import Profile from './src/views/screens/Profile';
+import ProductScreen from './src/views/screens/ProductScreen';
 
 const Stack = createStackNavigator();
 
@@ -14,11 +16,15 @@ const App = () => {
   return (
     <NavigationContainer>
       <StatusBar backgroundColor={COLORS.white} barStyle="dark-content" />
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator 
+        initialRouteName="Home"
+        screenOptions={{headerShown: false}}>
         <Stack.Screen name="BoardScreen" component={OnBoardScreen} />
         <Stack.Screen name="Home" component={BottomNavigator} />
         <Stack.Screen name="DetailScreen" component={DetailScreen} />
         <Stack.Screen name="ChatDokterScreen" component={ChatDokterScreen} />
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="ProductScreen" component={ProductScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

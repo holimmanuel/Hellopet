@@ -41,11 +41,11 @@ const ChatDokterScreen = ({navigation}) => {
     return (
     <SafeAreaView style={{backgroundColor: COLORS.white, flex: 1}}>
       <View style={style.header}>
-        <Text style={{fontSize: 25, textAlign:'justify', fontWeight: 'bold'}}>Chat Dokter</Text>
+        <Text style={{fontSize: 20, textAlign:'justify', fontWeight: 'bold'}}>Chat Dokter</Text>
       </View>
       <View style={style.inputContainer}>
-          <Icon name="search" size={30} />
-          <TextInput style={{marginHorizontal: 5, flex: 1, fontSize: 18}}
+          <Icon name="search" size={25} />
+          <TextInput style={{marginHorizontal: 5,alignContent: 'center', flex: 1, fontSize: 18}}
             placeholder="Search for Dokter"/>
       </View>
       <FlatList
@@ -53,14 +53,14 @@ const ChatDokterScreen = ({navigation}) => {
         contentContainerStyle={{paddingBottom: 80}}
         data={biodata}
         renderItem={({item}) => <CartCard item={item} />}
-        ListFooterComponentStyle={{paddingHorizontal: 20, marginTop: 20}}
+        ListFooterComponentStyle={{paddingHorizontal: 10, marginTop: 10}}
         ListFooterComponent={() => (
           <View>
             <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                marginVertical: 20,
+                marginVertical: 10,
               }}>
             </View>
           </View>
@@ -73,7 +73,7 @@ const style = StyleSheet.create({
   inputContainer: {
     marginHorizontal: 20,
     marginBottom: 10,
-    height: 50,
+    height: 40,
     borderRadius: 10,
     flexDirection: 'row',
     backgroundColor: COLORS.light,
@@ -87,19 +87,19 @@ const style = StyleSheet.create({
     marginHorizontal: 20,
   },
   cartCard: {
-    height: 100,
+    height: 120,
     elevation: 15,
     borderRadius: 10,
     backgroundColor: COLORS.white,
-    marginVertical: 10,
+    marginVertical: 8,
     marginHorizontal: 20,
     paddingHorizontal: 10,
     flexDirection: 'row',
     alignItems: 'center',
   },
   actionBtn: {
-    width: 130,
-    height: 50,
+    width: 100,
+    height: 40,
     backgroundColor: COLORS.primary,
     borderRadius: 40,
     justifyContent: 'center',
