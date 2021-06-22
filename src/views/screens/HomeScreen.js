@@ -17,6 +17,7 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../../consts/colors';
 import fiture from '../../consts/fiture';
+
 const {width} = Dimensions.get('screen');
 const cardWidth = width / 2 - 20;
 
@@ -24,10 +25,8 @@ const HomeScreen = ({navigation}) => {
 const ListCategories = () => {
     return (
       <ScrollView
-        horizontal
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={style.categoriesListContainer}>
-        {categories.map((category, index) => (
+        contentContainer Style={style.categoriesListContainer}>
           <TouchableOpacity
             key={index}
             activeOpacity={0.8}
@@ -60,7 +59,7 @@ const ListCategories = () => {
               </Text>
             </View>
           </TouchableOpacity>
-        ))}
+        ))
       </ScrollView>
     );
   };
@@ -107,11 +106,11 @@ const ListCategories = () => {
             What do you want today
           </Text>
         </View>
-
-        <Image
-          source={require('../../assets/person.png')}
-          style={{height: 50, width: 50, borderRadius: 25}}
-        />
+          <TouchableOpacity>
+            <Image
+              source={require('../../assets/person.png')}
+              style={{height: 50, width: 50, borderRadius: 25}}/>
+          </TouchableOpacity> 
       </View>
       <View
         style={{

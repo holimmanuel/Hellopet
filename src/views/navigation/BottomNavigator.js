@@ -35,7 +35,7 @@ const BottomNavigator = () => {
         name="Product"
         component={ProductScreen}
         options={{
-          tabBarIcon: ({color}) => <Icon name="local-grocery-store" color={color} size={30} />,
+          tabBarIcon: ({color}) => <Icon name="shopping-bag" color={color} size={30} />,
         }}
       /> 
       <Tab.Screen

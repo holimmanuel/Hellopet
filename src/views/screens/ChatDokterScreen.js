@@ -1,15 +1,15 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View, Text, Image} from 'react-native';
+import {SafeAreaView, StyleSheet, View, Text, Image, ScrollView} from 'react-native';
 import {FlatList, TextInput, TouchableHighlight} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../../consts/colors';
 import biodata from '../../consts/biodata';
 
-
-
 const ChatDokterScreen = ({navigation}) => {
   const CartCard = ({item}) => {
     return (
+      <ScrollView showsHorizontalScrollIndicator={false}
+        contentContainer Style={style.categoriesListContainer}>
       <TouchableHighlight
         underlayColor={COLORS.white}
         activeOpacity={0.9}
@@ -36,6 +36,7 @@ const ChatDokterScreen = ({navigation}) => {
             </View>
       </View>
       </TouchableHighlight>
+      </ScrollView>
     );
   };
     return (
